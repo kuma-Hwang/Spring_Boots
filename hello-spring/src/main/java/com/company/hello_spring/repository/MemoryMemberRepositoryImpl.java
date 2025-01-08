@@ -1,6 +1,7 @@
 package com.company.hello_spring.repository;
 
 import com.company.hello_spring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -31,5 +32,9 @@ public class MemoryMemberRepositoryImpl implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore(){
+        store.clear();
     }
 }
